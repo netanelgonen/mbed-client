@@ -14,6 +14,8 @@ include_directories (${NANOSTACK_LIBSERVICE_DIR}/mbed-client-libservice/)
 include_directories (${CLIENT_SRC_DIR}/../)
 include_directories (${CLIENT_SRC_DIR}/)
 
+set(CLIENT_DEFINES "")
+
 set(CLIENT_SRCS 
 	${CLIENT_SRC_DIR}/m2mbase.cpp
 	${CLIENT_SRC_DIR}/m2mblockmessage.cpp
@@ -48,6 +50,6 @@ include_directories(${PAL_PORT_SOURCE_DIR}/CFStore/${PAL_CFSTORE_STORAGE}/)
 
 
 
-CREATE_LIBRARY(mbedClient "${CLIENT_SRCS}" "")
+CREATE_LIBRARY(mbedClient "${CLIENT_SRCS}" "${CLIENT_DEFINES}")
 
 
